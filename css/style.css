@@ -1,0 +1,322 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(21, 21, 59);
+}
+
+a {
+    text-decoration: none;
+}
+
+/*HEADER*/
+
+.header {
+    background-color: rgb(30, 30, 83);
+    border-bottom: solid 1px rgb(164, 123, 164);
+    height: 190px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*LOGO*/
+
+.logo-sec {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo-img {
+    height: 110px;
+    margin: 0px 30px;
+    margin-top: 20px;
+}
+
+/*NAV-BAR*/
+
+.ulnavbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    float: center;
+}
+
+.navbar-items {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 8px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+/*FORM*/
+
+.contenedorPadre {
+    display: flex;
+    justify-content: end;
+    margin: 0px 20px;
+}
+
+/*MAIN*/
+
+.titulo {
+    color: azure;
+    margin: 20px 20px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+}
+
+.portada-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color:whitesmoke;
+    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+}
+
+.portada {
+    width: 220px;
+    margin: 20px 20px;
+}
+
+.portada-img {
+    width: 100%;
+    height: 320px;
+}
+
+/*MAIN-DETALLES*/
+
+.titulo-detalle {
+    color: azure;
+    margin: 20px 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.portada-sec-detalle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color:whitesmoke;
+    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+
+.portada-detalle {
+    margin: 0px 20px;
+}
+
+.portada-img-detalle {
+    height: 350px;
+    width: 250px;
+}
+
+.h2 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 40px;
+}
+
+.h2-generos {
+    font-size: 22px;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: lightblue;
+    margin: 10px 20px;
+    font-weight: lighter;
+}
+
+.h3 {
+    color: lightblue;
+    text-decoration: none;
+    font-size: 15px;
+    font-family:  'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.p {
+   font-size: 16px;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   max-width: 700px;
+   color: whitesmoke;
+   text-decoration: none;
+
+}
+
+.iframe {
+    margin: 0px 70px;
+}
+
+.li {
+    list-style: none;
+    color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: rgba(173, 216, 230, 0.46);
+    max-width: max-content;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/*FOOTER*/
+
+.footer {
+    background-color: rgb(30, 30, 83);
+    border-top: solid 1px rgb(164, 123, 164);
+    margin: 0px;
+    padding: 30px 15px;
+}
+
+.ulfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-text {
+    list-style: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+}
+
+@media (max-width:420px) {
+
+    *{
+        box-sizing: border-box;
+    }
+ 
+    body {
+        padding: 0px;
+    }
+
+    .header {
+        height: 170px;
+    }
+
+    .logo-sec
+    
+    .logo-img {
+        height: 75px;
+        margin: 0px 15px;
+        margin-top: 20px;
+    }
+
+    .ulnavbar {
+        margin: 7px;
+    }
+    
+    .navbar-items {
+        font-size: 15px;
+        font-weight: lighter;
+    }
+
+    .contenedorPadre {
+        display: flex;
+        justify-content: center;
+        margin: 5px 5px;
+    }
+
+    .input {
+        width: 95px;
+        height: 21.5px;
+    }
+
+    .titulo {
+        font-size: 14px;
+    }
+
+    .portada-sec {
+        font-size: 9px;
+    }
+    
+    .portada {
+        width: 150px;
+        margin: 5px 20px;
+    }
+    
+    .portada-img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .h2-generos {
+        font-size: 16px;
+        margin: 10px 20px;
+    }
+
+    .li {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    .titulo-detalle {
+        margin: 15px 20px;
+        font-size: 14px;
+    }
+
+    .h2 {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .h3 {
+        font-size: 14px;
+    }
+
+    .portada-sec-detalle {
+        font-size: 12px;
+    }
+    
+    .portada-detalle {
+        margin: 0px 20px;
+    }
+    
+    .portada-img-detalle {
+        height: 220px;
+        width: 160px;
+    }
+
+    .iframe {
+        margin: 10px 0px;
+        width: 300px;
+        height: 180px;
+    }
+
+    .p {
+        font-size: 12px;
+        max-width: 350px;     
+     }
+
+     .footer {
+        height: 100px;
+     }
+
+     .ulfooter {
+        padding: 0px 0px;
+     }
+
+    
+
+
+    
+    
+    }
+    
+
+
