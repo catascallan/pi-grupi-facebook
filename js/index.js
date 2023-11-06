@@ -9,15 +9,22 @@ let urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${acaV
 let portada = document.querySelector(".portada-img");
 
 fetch(urlMasVisto)
-.then(function(response) {
-    return response.json();
+.then(function(miRespuesta) {
+    return miRespuesta.json();
 })
-.then(function(data) {
-    let results = data.results
-    console.log(results);
-    /*portada.src = results.poster_path
-    tenemos que armar un for para que la info se modifique según el index en el diccionario*/
+.then(data => {
+    let peliculas = data.results.slice(0, 5);
+    peliculas.forEach((pelicula, index) => {
+        let article = document.getElementsByClassName('portada')[index];
+        article.getElementsByTagName('img')[0].src = `https://image.tmdb.org/t/p/original${pelicula.poster_path}`;
+        article.getElementsByClassName('tituloPeli')[0].innerText = pelicula.title;
+        article.getElementsByClassName('estrenoPeli')[0].innerText = `Fecha de estreno: ${pelicula.release_date}`;
+    });
 })
-.catch(function(errors) {
-    console.log(errors);
+.catch(function(miError) {
+    console.log(miError);
 });
+
+
+
+

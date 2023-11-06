@@ -2,8 +2,6 @@ let acaVaLaAPIKey = "3fdc54d209865d0fa99ee5f520db7d2b";
 
 let id_pelicula = 2000;
 
-let busqueda = "Shrek";
-
 let urlDetallePeli = `https://api.themoviedb.org/3/movie/${id_pelicula}?api_key=${acaVaLaAPIKey}`
 
 let h2 = document.querySelector(".h2")
