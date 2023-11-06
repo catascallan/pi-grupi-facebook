@@ -24,3 +24,12 @@ fetch(urlMasVisto)
     console.log(errors);
 });
 
+document.querySelector(".contenedorPadre").onsubmit = function() {
+    var buscar = document.querySelector("#busqueda").value;
+    if (buscar) {
+        this.action = urlBusqueda + buscar;
+    } else {
+        alert('Por favor, ingrese un término de búsqueda.');
+        return false;
+    }
+    };
