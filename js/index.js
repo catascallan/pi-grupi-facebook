@@ -6,8 +6,6 @@ let urlPelisPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${ac
 
 let urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`
 
-let urlBusqueda = `https://api.themoviedb.org/3/search/movie?api_key=${acaVaLaAPIKey}&query=${busqueda}`
-
 let portada = document.querySelector(".portada-img");
 
 fetch(urlMasVisto)
