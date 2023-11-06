@@ -76,7 +76,7 @@ a {
     font-weight: lighter;
 }
 
-.portada-sec {
+#portada-sec {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
