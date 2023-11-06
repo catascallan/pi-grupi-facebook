@@ -194,27 +194,35 @@ a {
     color: whitesmoke;
 }
 
+.logoTMDB-sec {
+    display: flex;
+    justify-content: center;
+}
+
+.logoTMDB {
+    height: 15px;
+}
+
 @media (max-width:420px) {
 
-    *{
-        box-sizing: border-box;
-    }
- 
     body {
         padding: 0px;
     }
+
+    /*HEADER*/
 
     .header {
         height: 170px;
     }
 
-    .logo-sec
+    /*LOGO*/
     
     .logo-img {
         height: 75px;
         margin: 0px 15px;
-        margin-top: 20px;
     }
+
+    /*NAVBAR*/
 
     .ulnavbar {
         margin: 7px;
@@ -222,11 +230,11 @@ a {
     
     .navbar-items {
         font-size: 15px;
-        font-weight: lighter;
     }
 
+    /*FORM*/
+
     .contenedorPadre {
-        display: flex;
         justify-content: center;
         margin: 5px 5px;
     }
@@ -235,6 +243,8 @@ a {
         width: 95px;
         height: 21.5px;
     }
+
+    /*MAIN*/
 
     .titulo {
         font-size: 14px;
@@ -250,39 +260,20 @@ a {
     }
     
     .portada-img {
-        width: 100%;
         height: 220px;
     }
 
-    .h2-generos {
-        font-size: 16px;
-        margin: 10px 20px;
-    }
-
-    .li {
-        font-size: 15px;
-        margin-bottom: 10px;
-        padding: 8px;
-    }
+    /*MAIN DETALLE*/
 
     .titulo-detalle {
         margin: 15px 20px;
         font-size: 14px;
     }
 
-    .h2 {
-        font-size: 12px;
-        margin-bottom: 20px;
-    }
-
-    .h3 {
-        font-size: 14px;
-    }
-
     .portada-sec-detalle {
         font-size: 12px;
     }
-    
+
     .portada-detalle {
         margin: 0px 20px;
     }
@@ -292,30 +283,50 @@ a {
         width: 160px;
     }
 
+    .h2 {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .h2-generos {
+        font-size: 16px;
+    }
+
+    .h3 {
+        font-size: 14px;
+    }
+
+    .p {
+        font-size: 12px;
+        max-width: 350px;     
+    }
+
     .iframe {
         margin: 10px 0px;
         width: 300px;
         height: 180px;
     }
 
-    .p {
-        font-size: 12px;
-        max-width: 350px;     
-     }
+    .li {
+        font-size: 15px;
+        padding: 8px;
+    }
 
-     .footer {
+    /*FOOTER*/
+
+    .footer {
         height: 100px;
-     }
+    }
 
-     .ulfooter {
+    .ulfooter {
         padding: 0px 0px;
-     }
+    }
 
-    
+    .logoTMDB {
+        height: 7px;
+        margin-top: 7px;
+    }
 
-
-    
-    
     }
     
 
