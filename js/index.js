@@ -6,29 +6,71 @@ let urlPelisPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${ac
 
 let urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`
 
-let portada = document.querySelector(".portada-img");
-
 fetch(urlMasVisto)
-.then(function(miRespuesta) {
-    return miRespuesta.json();
+.then(function(res) {
+    return res.json();
 })
-.then(data => {
-    let peliculas = data.results.slice(0, 5);
-    peliculas.forEach((pelicula, index) => {
-        let article = document.getElementsByClassName('portada')[index];
-        article.getElementsByTagName('img')[0].src = `https://image.tmdb.org/t/p/original${pelicula.poster_path}`;
-        article.getElementsByClassName('tituloPeli')[0].innerText = pelicula.title;
-        article.getElementsByClassName('estrenoPeli')[0].innerText = `Fecha de estreno: ${pelicula.release_date}`;
-    });
+.then(function(data) {
+    console.log(data.results);
+    let peliculas = data.results; /* <== El array de personajes*/
+    let seccion = document.querySelector(".loMasVisto");
+    let allMovies = "";
+    for (let i = 0; i < 5; i++) {
+        allMovies += `<article class="portada">
+                            <a href="detalle-pelicula.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
+                            <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> ${peliculas[i].title}</a> </h2>
+                            <p class="estrenoPeli">Estreno: ${peliculas[i].release_date}</p>
+                        </article>`;
+    }
+    seccion.innerHTML = allMovies;
 })
-.catch(function(miError) {
-    console.log(miError);
+.catch(function(error) {
+    console.log(error);
 });
 
+fetch(urlPelisPopulares)
+.then(function(res) {
+    return res.json();
+})
+.then(function(data) {
+    console.log(data.results);
+    let peliculas = data.results; /* <== El array de personajes*/
+    let seccion = document.querySelector(".peliculasPopu");
+    let allMovies = "";
+    for (let i = 0; i < 5; i++) {
+        allMovies += `<article class="portada">
+                            <a href="detalle-pelicula.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
+                            <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> ${peliculas[i].title}</a> </h2>
+                            <p class="estrenoPeli">Estreno: ${peliculas[i].release_date}</p>
+                        </article>`;
+    }
+    seccion.innerHTML = allMovies;
+})
+.catch(function(error) {
+    console.log(error);
+});
 
-
-
-
+fetch(urlSeriesPopulares)
+.then(function(res) {
+    return res.json();
+})
+.then(function(data) {
+    console.log(data.results);
+    let series = data.results; /* <== El array de personajes*/
+    let seccion = document.querySelector(".seriesPopu");
+    let allseries = "";
+    for (let i = 0; i < 5; i++) {
+        allseries += `<article class="portada">
+                            <a href="detalle-serie.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${series[i].poster_path}"></a>
+                            <h2 class="tituloPeli">Titulo: <a href="./detalle-serie.html?idSerie=${series[i].id}"> ${series[i].name}</a> </h2>
+                            <p class="estrenoPeli">Estreno: ${series[i].first_air_date}</p>
+                        </article>`;
+    }
+    seccion.innerHTML = allseries;
+})
+.catch(function(error) {
+    console.log(error);
+});
 
 
 

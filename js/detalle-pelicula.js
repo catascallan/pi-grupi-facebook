@@ -1,21 +1,15 @@
+let qs = location.search;
+let qsObj = new URLSearchParams(qs);
+let id_pelicula = qsObj.get("idPelicula");
 let acaVaLaAPIKey = "3fdc54d209865d0fa99ee5f520db7d2b";
-
-let id_pelicula = 2000;
-
 let urlDetallePeli = `https://api.themoviedb.org/3/movie/${id_pelicula}?api_key=${acaVaLaAPIKey}`
 
 let h2 = document.querySelector(".h2")
-
 let portadaImgDetalle = document.querySelector(".portada-img-detalle")
-
 let rating = document.querySelector(".rating");
-
 let estreno = document.querySelector(".estreno");
-
 let duracion = document.querySelector(".duracion");
-
 let sinopsis = document.querySelector(".sinopsis");
-
 let genero = document.querySelector(".genero");
 
 fetch(urlDetallePeli)
