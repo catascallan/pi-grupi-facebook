@@ -12,12 +12,12 @@ fetch(urlMasVisto)
 })
 .then(function(data) {
     console.log(data.results);
-    let peliculas = data.results; /* <== El array de personajes*/
+    let peliculas = data.results;
     let seccion = document.querySelector(".loMasVisto");
     let allMovies = "";
     for (let i = 0; i < 5; i++) {
         allMovies += `<article class="portada">
-                            <a href="detalle-pelicula.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
+                            <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
                             <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> ${peliculas[i].title}</a> </h2>
                             <p class="estrenoPeli">Estreno: ${peliculas[i].release_date}</p>
                         </article>`;
@@ -34,12 +34,12 @@ fetch(urlPelisPopulares)
 })
 .then(function(data) {
     console.log(data.results);
-    let peliculas = data.results; /* <== El array de personajes*/
+    let peliculas = data.results;
     let seccion = document.querySelector(".peliculasPopu");
     let allMovies = "";
     for (let i = 0; i < 5; i++) {
         allMovies += `<article class="portada">
-                            <a href="detalle-pelicula.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
+                            <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
                             <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"> ${peliculas[i].title}</a> </h2>
                             <p class="estrenoPeli">Estreno: ${peliculas[i].release_date}</p>
                         </article>`;
@@ -56,12 +56,12 @@ fetch(urlSeriesPopulares)
 })
 .then(function(data) {
     console.log(data.results);
-    let series = data.results; /* <== El array de personajes*/
+    let series = data.results; 
     let seccion = document.querySelector(".seriesPopu");
     let allseries = "";
     for (let i = 0; i < 5; i++) {
         allseries += `<article class="portada">
-                            <a href="detalle-serie.html"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${series[i].poster_path}"></a>
+                            <a href="./detalle-serie.html?idSerie=${series[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${series[i].poster_path}"></a>
                             <h2 class="tituloPeli">Titulo: <a href="./detalle-serie.html?idSerie=${series[i].id}"> ${series[i].name}</a> </h2>
                             <p class="estrenoPeli">Estreno: ${series[i].first_air_date}</p>
                         </article>`;
