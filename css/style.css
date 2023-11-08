@@ -8,7 +8,8 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+    color: lightblue;
 }
 
 /*HEADER*/
@@ -130,12 +131,13 @@ a {
     font-style: italic;
     font-weight: lighter;
     margin-bottom: 40px;
+    color: whitesmoke;
 }
 
 .h2-generos {
     font-size: 22px;
     font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: lightblue;
+    color: whitesmoke;
     margin: 10px 20px;
     font-weight: lighter;
 }
