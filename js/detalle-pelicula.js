@@ -24,10 +24,11 @@ fetch(urlDetallePeli)
     let urlCompleta = urlBase + rutaImagen;
     portadaImgDetalle.src = urlCompleta
     rating.innerText = data.popularity
-    estreno.innerText = data.release_date
-    duracion.innerText = data.runtime
+    estreno.innerText = data.release_date 
+    duracion.innerText = data.runtime + " min"
     sinopsis.innerText = data.overview
-
+    for (let i = 0; i < genero.length; i++) {
+        genero.innerText = data.genres[i].name }
 })
 .catch(function(errors) {
     console.log(errors);
