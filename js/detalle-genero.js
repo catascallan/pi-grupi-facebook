@@ -1,8 +1,9 @@
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);
 let id_genero = qsObj.get("id_genero");
+let nombre = qsObj.get("nombre");
 let acaVaLaAPIKey = "3fdc54d209865d0fa99ee5f520db7d2b"
-let urlGenero = `https://api.themoviedb.org/3/discover/movie?api_key=${acaVaLaAPIKey}&query=${id_genero}`
+let urlGenero = `https://api.themoviedb.org/3/discover/movie?api_key=${acaVaLaAPIKey}&with_genres=${id_genero}`
 
 fetch(urlGenero)
 .then(function(res) {
@@ -22,7 +23,7 @@ fetch(urlGenero)
                         </article>`;
     }
     seccion.innerHTML = allMovies;
-    miGenero.innerText = id_genero;
+    miGenero.innerText = nombre;
 
 })
 .catch(function(error) {

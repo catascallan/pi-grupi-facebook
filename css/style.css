@@ -175,6 +175,11 @@ p {
     list-style-type: none;
 }  
 
+.generoLista {
+    list-style-type: none;
+    padding: 0px 0px;
+}
+
 /*FOOTER*/
 
 .footer {

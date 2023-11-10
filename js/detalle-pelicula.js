@@ -10,7 +10,7 @@ let rating = document.querySelector(".rating");
 let estreno = document.querySelector(".estreno");
 let duracion = document.querySelector(".duracion");
 let sinopsis = document.querySelector(".sinopsis");
-let genero = document.querySelector(".genero");
+let genero = document.querySelector(".generoLista");
 
 fetch(urlDetallePeli)
 .then(function(response) {
@@ -27,8 +27,15 @@ fetch(urlDetallePeli)
     estreno.innerText = data.release_date 
     duracion.innerText = data.runtime + " min"
     sinopsis.innerText = data.overview
-    for (let i = 0; i < genero.length; i++) {
-        genero.innerText = data.genres[i].name }
+
+    let arrayGeneros = data.genres;
+    let contenido = "";
+    for (let i = 0; i < arrayGeneros.length; i++) {
+        console.log(arrayGeneros[i].name);
+        contenido += `<li> <a href="./detalle-genero.html" class="genero">${arrayGeneros[i].name}</a></li>`
+    }
+    genero.innerHTML = contenido;
+    
 })
 .catch(function(errors) {
     console.log(errors);

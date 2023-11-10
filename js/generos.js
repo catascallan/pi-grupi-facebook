@@ -18,7 +18,7 @@ fetch(urlGenerosPelis)
 
     let contenido = "";
     for (let i = 0; i < generos.length; i++) {
-          contenido += ` <li><a href="./detalle-genero.html?id_genero=${generos[i].id}">${generos[i].name}</a></li>`
+          contenido += ` <li><a href="./detalle-genero.html?id_genero=${generos[i].id}&nombre=${generos[i].name}">${generos[i].name}</a></li>`
     }
     
     listaPelis.innerHTML = contenido;
