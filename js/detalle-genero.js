@@ -20,7 +20,7 @@ fetch(urlGenero)
     for (let i = 0; i < peliculas.length; i++) {
         allMovies += `<article class="portada">
                             <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"><img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
-                            <h2 class="h2">Película: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}">${peliculas[i].title}</a></h2>
+                            <h2 class="h2"><a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}">${peliculas[i].title}</a></h2>
                         </article>`;
     }
     seccion.innerHTML = allMovies;
@@ -45,7 +45,7 @@ fetch(urlGeneroTV)
     for (let i = 0; i < peliculas.length; i++) {
         allMovies += `<article class="portada">
                             <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}"><img class="portada-img" src="https://image.tmdb.org/t/p/original${peliculas[i].poster_path}"></a>
-                            <h2 class="h2">Serie: <a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}">${peliculas[i].original_name}</a></h2>
+                            <h2 class="h2"><a href="./detalle-pelicula.html?idPelicula=${peliculas[i].id}">${peliculas[i].original_name}</a></h2>
                         </article>`;
     }
     seccion.innerHTML = allMovies;

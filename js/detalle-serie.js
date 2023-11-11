@@ -25,14 +25,13 @@ fetch(urlDetalleSerie)
     rating.innerText = data.popularity
     estreno.innerText = data.first_air_date
     sinopsis.innerText = data.overview
-    
     let arrayGeneros = data.genres;
+    
     let contenido = "";
     for (let i = 0; i < arrayGeneros.length; i++) {
-        console.log(arrayGeneros[i].name);
-        contenido += `<li> <a href="./detalle-genero.html" class="genero">${arrayGeneros[i].name}</a></li>`
+          contenido += ` <li><a href="./detalle-genero.html?id_genero=${arrayGeneros[i].id}&nombre=${arrayGeneros[i].name}">${arrayGeneros[i].name}</a></li>`
     }
-    genero.innerHTML = contenido;
+    genero.innerHTML = contenido 
 })
 .catch(function(errors) {
     console.log(errors);

@@ -27,16 +27,14 @@ fetch(urlDetallePeli)
     estreno.innerText = data.release_date 
     duracion.innerText = data.runtime + " min"
     sinopsis.innerText = data.overview
-
     let arrayGeneros = data.genres;
 
     let contenido = "";
     for (let i = 0; i < arrayGeneros.length; i++) {
-        console.log(arrayGeneros[i].name);
-        contenido += `<li> <a href="./detalle-genero.html" class="genero">${arrayGeneros[i].name}</a></li>`
+          contenido += ` <li><a href="./detalle-genero.html?id_genero=${arrayGeneros[i].id}&nombre=${arrayGeneros[i].name}">${arrayGeneros[i].name}</a></li>`
     }
-
-    genero.innerHTML = contenido
+    
+    genero.innerHTML = contenido    
     
 })
 .catch(function(errors) {
