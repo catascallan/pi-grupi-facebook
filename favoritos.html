@@ -6,12 +6,12 @@
     <title>Favoritos</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="../pi-grupi-facebook/img/favicon.png">
-    
+
 </head>
 <body>
-
+    
     <header class="header">
-
+        
         <div class="logo-sec">
             <a href="./index.html"><img class="logo-img" src="./img/LogoJC.png" alt=""></a>
         </div>
@@ -25,43 +25,25 @@
                 </li>
             </ul>
         </div>
+    
+    <form class="contenedorPadre" action="./search-results.html" method="get">
+    <div class="contenedor.input">
+        <input class="input" type="text" name="buscar" id="busqueda" placeholder="Buscar películas..." required>
+    </div> 
 
-        <form class="contenedorPadre" action="./search-results.html" method="get">
-            <div class="contenedor.input">
-                <input class="input" type="text" name="buscar" id="busqueda" placeholder="Buscar películas..." required>
-            </div> 
-        
-            <div class="contenedor.input">
-                <button class="button" type="submit">Submit</button>
-            </div> 
-            </form>
-                
+    <div class="contenedor.input">
+        <button class="button" type="submit">Submit</button>
+    </div> 
+    </form>
+
     </header>
 
     <main class="main">
 
-        <h1 class="titulo">MIS FAVORITOS</h1>
-        <h2 class="h2-generos">Películas</h2>
-        <section class="portada-sec">
-
-            <article class="portada">
-                <a href="detalle-pelicula.html"> <img class="portada-img" src="../pi-grupi-facebook/img/películas-populares/barbie.jpg" alt=""></a>
-                <h2>Barbie</h2>
-            </article>
-
-        </section>
-        
-        <h2 class="h2-generos">Series</h2>
-        <section class="portada-sec">
-
-            <article class="portada">
-                <a href="detalle-serie.html"> <img class="portada-img" src="../pi-grupi-facebook/img/series-populares/gossip.jpg" alt=""></a>
-                <h2>Gossip Girl</h2>
-            </article>
-
+        <h1 class="titulo">PELÍCULAS FAVORITAS</h1>
+        <section class= "favoritos" id="portada-sec">
         </section>
 
-        
     </main>
 
     <footer class="footer">
@@ -73,6 +55,7 @@
             <li class="footer-text" href="">Catalina Scallan</li>
         </ul>
     </footer>
-      
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
