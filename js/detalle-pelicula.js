@@ -40,3 +40,30 @@ fetch(urlDetallePeli)
 .catch(function(errors) {
     console.log(errors);
 });
+
+let favoritos = [];
+let recuperoStorage = localStorage.getItem('favoritos');
+
+if (recuperoStorage != null) {
+    favoritos = JSON.parse(recuperoStorage);
+}
+
+let fav = document.querySelector('#fav');
+
+if (favoritos.includes(id_pelicula)) {
+    fav.innerText = 'QUITAR DE FAVORITOS'
+}
+
+fav.addEventListener('click', function() {
+    if (favoritos.includes(id_pelicula)) {
+        let indice = favoritos.indexOf(id_pelicula)
+        favoritos.splice(indice, 1);
+        fav.innerText = 'AGREGAR A FAVORITOS'
+    } else {
+        favoritos.push(id_pelicula);
+        fav.innerText = 'QUITAR DE FAVORITOS'
+    }
+
+    let favoritosToString = JSON.stringify(favoritos);
+    localStorage.setItem('favoritos', favoritosToString)
+} )
