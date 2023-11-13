@@ -3,7 +3,7 @@ let favoritos = JSON.parse(recuperoStorage)
 let section = document.querySelector('#portada-sec');
 let pelisFav = '';
 if (favoritos == null || favoritos.length == 0) {
-    section.innerHTML = '<p>No hay favoritos seleccionados</p>'
+    section.innerHTML = '<p class= "titulo"> No hay favoritos seleccionados </p>'
 } else {
     
     for (let i = 0; i < favoritos.length; i++) {
