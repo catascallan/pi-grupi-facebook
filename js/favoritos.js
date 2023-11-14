@@ -18,9 +18,9 @@ if (favoritos == null || favoritos.length == 0) {
             console.log(data);
 
             pelisFav += `<article class="portada">
-                        <a href="./detalle-pelicula.html?idPelicula=${favoritos[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${favoritos[i].poster_path}"></a>
-                        <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${favoritos[i].id}">${favoritos[i].title}</a> </h2>
-                        <p class="estrenoPeli">Estreno: ${favoritos[i].release_date}</p>
+                        <a href="./detalle-pelicula.html?idPelicula=${data.id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${data.poster_path}"></a>
+                        <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${data.id}">${data.title}</a> </h2>
+                        <p class="estrenoPeli">Estreno: ${data.release_date}</p>
                         </article>`;
 
             section.innerHTML = pelisFav;
@@ -32,16 +32,3 @@ if (favoritos == null || favoritos.length == 0) {
         
     }
 }
-
-
-//let pelisFav= "";
-//for (let i = 0; i < arrayfavoritos.length; i++) {
-//    pelisFav += `<article class="portada">
-//                    <a href="./detalle-pelicula.html?idPelicula=${arrayfavoritos[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${arrayfavoritos[i].poster_path}"></a>
-//                    <h2 class="tituloPeli">Titulo: <a href="./detalle-pelicula.html?idPelicula=${arrayfavoritos[i].id}">${arrayfavoritos[i].title}</a> </h2>
-//                    <p class="estrenoPeli">Estreno: ${arrayfavoritos[i].release_date}</p>
-//                    </article>`;
-
-//        section.innerHTML = pelisFav;
-        
-//    })
