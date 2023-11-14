@@ -2,6 +2,7 @@ let recuperoStorage = localStorage.getItem('favoritos');
 let favoritos = JSON.parse(recuperoStorage)
 let section = document.querySelector('#portada-sec');
 let pelisFav = '';
+
 if (favoritos == null || favoritos.length == 0) {
     section.innerHTML = '<p class= "titulo"> No hay favoritos seleccionados </p>'
 } else {
@@ -32,3 +33,4 @@ if (favoritos == null || favoritos.length == 0) {
         
     }
 }
+

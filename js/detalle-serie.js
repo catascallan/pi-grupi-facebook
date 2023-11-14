@@ -37,3 +37,4 @@ fetch(urlDetalleSerie)
     console.log(errors);
 });
 
+
