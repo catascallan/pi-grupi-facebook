@@ -3,6 +3,7 @@ let qsObj = new URLSearchParams(qs);
 let id_serie = qsObj.get("idSerie");
 let acaVaLaAPIKey = "3fdc54d209865d0fa99ee5f520db7d2b";
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${acaVaLaAPIKey}`
+let botonRecomend = `https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${acaVaLaAPIKey}`
 
 let h2 = document.querySelector(".h2")
 let portadaImgDetalle = document.querySelector(".portada-img-detalle")
@@ -36,5 +37,50 @@ fetch(urlDetalleSerie)
 .catch(function(errors) {
     console.log(errors);
 });
+
+let botonrecom = document.querySelector(".botonrecom")
+let series_recomendacion = document.querySelector(".series_recomendacion")
+
+series_recomendacion.style.display = 'none';
+botonrecom.addEventListener('click', function() {
+
+    if(series_recomendacion.style.display == "none"){
+        series_recomendacion.style.display = 'flex';
+        botonrecom.innerText = "OCULTAR RECOMENDACIONES"
+    }  
+    else{
+        series_recomendacion.style.display = "none";
+        botonrecom.innerText = "VER RECOMENDACIONES"
+    }
+})
+fetch(botonRecomend)
+.then(function(res) {
+    return res.json();
+})
+.then(function(data) {
+    console.log(data.results);
+    let series = data.results;
+    let seccion = document.querySelector(".series_recomendacion");
+    let allMovies = " ";
+    if (series.length != 0) {
+            for (let i = 0; i < series.length; i++) {
+                allMovies += `<article class="portada">
+                                    <a href="./detalle-serie.html?idSerie=${series[i].id}"> <img class="portada-img" src="https://image.tmdb.org/t/p/original${series[i].poster_path}"></a>
+                                    <h2 class="tituloPeli">Titulo: <a href="./detalle-serie.html?idSerie=${series[i].id}"> ${series[i].original_name}</a> </h2>
+                                    <p class="estrenoPeli">Estreno: ${series[i].first_air_date}</p>
+                               </article>`;
+    }
+    seccion.innerHTML = allMovies;
+}   else {
+        let seccion = document.querySelector(".series_recomendacion");
+        allMovies += `<p>No hay recomendaciones disponibles para este titulo.</p>`
+} 
+seccion.innerHTML = allMovies
+
+.catch(function(errors) {
+    console.log(errors);
+});
+})
+
 
 
